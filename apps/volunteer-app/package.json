@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+ dev
+    "firebase": "^12.7.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+
 feature/firebase-otp-auth
     "firebase": "^12.7.0",
     "react": "^19.2.0",
@@ -18,6 +23,7 @@ feature/firebase-otp-auth
 
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+ main
  main
     "vite-plugin-pwa": "^1.2.0"
   },
