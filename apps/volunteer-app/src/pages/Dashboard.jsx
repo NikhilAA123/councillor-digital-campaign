@@ -15,10 +15,41 @@ const Dashboard = () => {
     };
 
     return (
+ feature/auth-routing
+        <div className="auth-card" style={{ textAlign: 'left' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem', marginBottom: '1rem' }}>
+                <h2 style={{ fontSize: '1.5rem' }}>Dashboard</h2>
+                <div style={{ width: '32px', height: '32px', background: 'var(--primary-color)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>
+                    {currentUser?.phoneNumber ? currentUser.phoneNumber.slice(-2) : 'V'}
+                </div>
+            </div>
+
+            <div style={{ background: 'var(--background-color)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
+                <p style={{ margin: 0, fontSize: '0.85rem' }}>Welcome back,</p>
+                <p style={{ margin: 0, fontWeight: '600', color: 'var(--text-main)' }}>{currentUser?.phoneNumber}</p>
+                <div style={{ marginTop: '0.5rem', display: 'inline-block', padding: '0.25rem 0.5rem', background: '#DCFCE7', color: '#166534', borderRadius: '4px', fontSize: '0.75rem', fontWeight: '600' }}>
+                    Active Volunteer
+                </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
+                <div style={{ background: '#EFF6FF', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
+                    <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }}>0</h3>
+                    <p style={{ fontSize: '0.8rem', margin: 0 }}>Voters Added</p>
+                </div>
+                <div style={{ background: '#FFF7ED', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
+                    <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>0</h3>
+                    <p style={{ fontSize: '0.8rem', margin: 0 }}>Pending Sync</p>
+                </div>
+            </div>
+
+            <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
+
         <div style={{ padding: "20px" }}>
             <h1>Dashboard</h1>
             <p>Welcome, {currentUser?.phoneNumber}</p>
             <button onClick={handleLogout} style={{ padding: "10px 20px", marginTop: "20px" }}>
+ dev
                 Logout
             </button>
         </div>

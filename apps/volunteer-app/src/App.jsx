@@ -1,3 +1,7 @@
+ feature/auth-routing
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+
 feature/auth-routing
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
@@ -6,6 +10,7 @@ import { AuthProvider } from "./context/AuthContext";
 
  feature/firebase-otp-auth
  main
+ dev
  dev
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
