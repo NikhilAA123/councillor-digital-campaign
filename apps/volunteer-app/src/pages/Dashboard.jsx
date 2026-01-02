@@ -1,9 +1,20 @@
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { countVoters } from "../utils/db";
 
 const Dashboard = () => {
     const { currentUser, logout } = useAuth();
     const navigate = useNavigate();
+    const [stats, setStats] = useState({ local: 0, synced: 0 });
+
+    useEffect(() => {
+        const loadStats = async () => {
+            const localCount = await countVoters();
+            setStats(prev => ({ ...prev, local: localCount }));
+        };
+        loadStats();
+    }, []);
 
     const handleLogout = async () => {
         try {
@@ -33,14 +44,22 @@ const Dashboard = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: '#EFF6FF', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
-                    <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }}>0</h3>
+                    <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }}>{stats.local}</h3>
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>Voters Added</p>
                 </div>
                 <div style={{ background: '#FFF7ED', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
-                    <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>0</h3>
+                    <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>{stats.synced}</h3>
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>Pending Sync</p>
                 </div>
             </div>
+
+            <button
+                onClick={() => navigate('/add-voter')}
+                className="btn-primary"
+                style={{ marginBottom: '1rem' }}
+            >
+                + Add New Voter
+            </button>
 
             <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
                 Logout

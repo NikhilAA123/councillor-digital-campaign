@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { AuthProvider } from "./context/AuthContext";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import VoterForm from "./components/VoterForm";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
