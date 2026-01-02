@@ -15,7 +15,6 @@ const Dashboard = () => {
     };
 
     return (
- feature/auth-routing
         <div className="auth-card" style={{ textAlign: 'left' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem', marginBottom: '1rem' }}>
                 <h2 style={{ fontSize: '1.5rem' }}>Dashboard</h2>
@@ -44,12 +43,6 @@ const Dashboard = () => {
             </div>
 
             <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
-
-        <div style={{ padding: "20px" }}>
-            <h1>Dashboard</h1>
-            <p>Welcome, {currentUser?.phoneNumber}</p>
-            <button onClick={handleLogout} style={{ padding: "10px 20px", marginTop: "20px" }}>
- dev
                 Logout
             </button>
         </div>
