@@ -4,8 +4,10 @@ import {
   signInWithPhoneNumber,
 } from "firebase/auth";
 import { auth } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
   const [confirmation, setConfirmation] = useState(null);
@@ -56,7 +58,8 @@ function Login() {
     try {
       setLoading(true);
       await confirmation.confirm(otp);
-      alert("Login successful");
+      await confirmation.confirm(otp);
+      navigate("/dashboard");
     } catch (error) {
       console.error("OTP Verify Error:", error);
       alert("Invalid OTP. Please try again.");
