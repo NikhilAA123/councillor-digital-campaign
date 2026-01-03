@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addVoter } from '../utils/db'; // We'll make sure this path is correct
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
 
 const VoterForm = () => {
     const navigate = useNavigate();
@@ -11,6 +12,18 @@ const VoterForm = () => {
         ward: '',
         issue: '',
     });
+    const [duplicateWarning, setDuplicateWarning] = useState(null);
+
+    const checkPhone = async () => {
+        if (formData.phone.length >= 10) {
+            const isDuplicate = await checkDuplicateVoter(formData.phone);
+            if (isDuplicate) {
+                setDuplicateWarning("⚠️ This voter is already in the central database.");
+            } else {
+                setDuplicateWarning(null);
+            }
+        }
+    };
 
     const handleChange = (e) => {
         setFormData({
@@ -82,8 +95,10 @@ const VoterForm = () => {
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
+                        onBlur={checkPhone}
                         required
                     />
+                    {duplicateWarning && <p style={{ color: '#EF4444', fontSize: '0.8rem', marginTop: '0.25rem' }}>{duplicateWarning}</p>}
                 </div>
 
                 <div className="input-group">
