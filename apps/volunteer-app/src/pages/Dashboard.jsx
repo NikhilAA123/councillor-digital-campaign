@@ -1,9 +1,37 @@
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { countVoters } from "../utils/db";
+import { syncOfflineData } from "../utils/syncService";
 
 const Dashboard = () => {
     const { currentUser, logout } = useAuth();
     const navigate = useNavigate();
+    const [stats, setStats] = useState({ local: 0, synced: 0 });
+
+    useEffect(() => {
+        const loadStats = async () => {
+            const localCount = await countVoters();
+            setStats(prev => ({ ...prev, local: localCount }));
+
+            // Auto-sync on load
+            if (currentUser && navigator.onLine) {
+                try {
+                    const result = await syncOfflineData(currentUser.uid);
+                    if (result.added > 0) {
+                        // Refresh stats after sync
+                        const newLocalCount = await countVoters();
+                        setStats(prev => ({ ...prev, local: newLocalCount, synced: prev.synced + result.added }));
+                        alert(`Synced ${result.added} voters to cloud!`);
+                    }
+                } catch (e) {
+                    console.error("Auto-sync failed:", e);
+                }
+            }
+        };
+        loadStats();
+    }, [currentUser]);
 
     const handleLogout = async () => {
         try {
@@ -15,7 +43,6 @@ const Dashboard = () => {
     };
 
     return (
- feature/auth-routing
         <div className="auth-card" style={{ textAlign: 'left' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem', marginBottom: '1rem' }}>
                 <h2 style={{ fontSize: '1.5rem' }}>Dashboard</h2>
@@ -34,22 +61,24 @@ const Dashboard = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: '#EFF6FF', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
-                    <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }}>0</h3>
+                    <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }}>{stats.local}</h3>
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>Voters Added</p>
                 </div>
                 <div style={{ background: '#FFF7ED', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
-                    <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>0</h3>
+                    <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>{stats.synced}</h3>
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>Pending Sync</p>
                 </div>
             </div>
 
-            <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
+            <button
+                onClick={() => navigate('/add-voter')}
+                className="btn-primary"
+                style={{ marginBottom: '1rem' }}
+            >
+                + Add New Voter
+            </button>
 
-        <div style={{ padding: "20px" }}>
-            <h1>Dashboard</h1>
-            <p>Welcome, {currentUser?.phoneNumber}</p>
-            <button onClick={handleLogout} style={{ padding: "10px 20px", marginTop: "20px" }}>
- dev
+            <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
                 Logout
             </button>
         </div>
