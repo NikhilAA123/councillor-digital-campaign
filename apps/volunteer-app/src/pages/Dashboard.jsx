@@ -1,9 +1,13 @@
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+feature/offline-voter-form
+import { countVoters } from "../utils/db";
+
 import { useEffect, useState } from "react";
 import { countVoters } from "../utils/db";
 import { syncOfflineData } from "../utils/syncService";
+ dev
 
 const Dashboard = () => {
     const { currentUser, logout } = useAuth();
@@ -14,6 +18,11 @@ const Dashboard = () => {
         const loadStats = async () => {
             const localCount = await countVoters();
             setStats(prev => ({ ...prev, local: localCount }));
+ feature/offline-voter-form
+        };
+        loadStats();
+    }, []);
+
 
             // Auto-sync on load
             if (currentUser && navigator.onLine) {
@@ -32,6 +41,7 @@ const Dashboard = () => {
         };
         loadStats();
     }, [currentUser]);
+dev
 
     const handleLogout = async () => {
         try {
