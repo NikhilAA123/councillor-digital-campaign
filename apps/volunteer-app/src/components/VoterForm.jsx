@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+ feature/offline-voter-form
 import { addVoter } from '../utils/db'; // We'll make sure this path is correct
+
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+ dev
 
 const VoterForm = () => {
     const navigate = useNavigate();
@@ -11,6 +16,21 @@ const VoterForm = () => {
         ward: '',
         issue: '',
     });
+ feature/offline-voter-form
+
+    const [duplicateWarning, setDuplicateWarning] = useState(null);
+
+    const checkPhone = async () => {
+        if (formData.phone.length >= 10) {
+            const isDuplicate = await checkDuplicateVoter(formData.phone);
+            if (isDuplicate) {
+                setDuplicateWarning("⚠️ This voter is already in the central database.");
+            } else {
+                setDuplicateWarning(null);
+            }
+        }
+    };
+dev
 
     const handleChange = (e) => {
         setFormData({
@@ -82,8 +102,15 @@ const VoterForm = () => {
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
+ feature/offline-voter-form
                         required
                     />
+
+                        onBlur={checkPhone}
+                        required
+                    />
+                    {duplicateWarning && <p style={{ color: '#EF4444', fontSize: '0.8rem', marginTop: '0.25rem' }}>{duplicateWarning}</p>}
+ dev
                 </div>
 
                 <div className="input-group">
