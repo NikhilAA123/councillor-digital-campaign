@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import VoterForm from "./components/VoterForm";
 import ProtectedRoute from "./components/ProtectedRoute";
+import InstallPrompt from "./components/InstallPrompt";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             />
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
           </Routes>
+          <InstallPrompt />
         </Router>
       </AuthProvider>
     </LanguageProvider>
