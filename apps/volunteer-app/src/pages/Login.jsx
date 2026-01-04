@@ -4,8 +4,10 @@ import {
   signInWithPhoneNumber,
 } from "firebase/auth";
 import { auth } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
   const [confirmation, setConfirmation] = useState(null);
@@ -56,7 +58,8 @@ function Login() {
     try {
       setLoading(true);
       await confirmation.confirm(otp);
-      alert("Login successful");
+      await confirmation.confirm(otp);
+      navigate("/dashboard");
     } catch (error) {
       console.error("OTP Verify Error:", error);
       alert("Invalid OTP. Please try again.");
@@ -66,47 +69,61 @@ function Login() {
   };
 
   return (
-    <div style={{ padding: "1rem", maxWidth: "360px", margin: "auto" }}>
-      <h3>Volunteer Login</h3>
+    <div className="auth-card">
+      <div>
+        <h1 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>Councillor Campaign</h1>
+        <h3>Volunteer Login</h3>
+        <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Enter your mobile number to access the volunteer dashboard.</p>
+      </div>
 
-      <input
-        type="tel"
-        placeholder="+91XXXXXXXXXX"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-        style={{ width: "100%", padding: "8px", marginBottom: "8px" }}
-      />
-
-      <button
-        onClick={sendOtp}
-        disabled={loading}
-        style={{ width: "100%", padding: "8px" }}
-      >
-        {loading ? "Sending OTP..." : "Send OTP"}
-      </button>
-
-      {confirmation && (
-        <>
+      {!confirmation ? (
+        <div className="input-group">
+          <label className="input-label" htmlFor="phone">Mobile Number</label>
           <input
+            id="phone"
+            type="tel"
+            placeholder="+91 98765 43210"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+          <button
+            className="btn-primary"
+            onClick={sendOtp}
+            disabled={loading}
+          >
+            {loading ? "Sending..." : "Send Verification Code"}
+          </button>
+        </div>
+      ) : (
+        <div className="input-group">
+          <label className="input-label" htmlFor="otp">Enter Verification Code</label>
+          <input
+            id="otp"
             type="number"
-            placeholder="Enter OTP"
+            placeholder="123456"
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
-            style={{ width: "100%", padding: "8px", marginTop: "10px" }}
+            style={{ letterSpacing: '0.5rem', textAlign: 'center', fontWeight: 'bold' }}
           />
-
           <button
+            className="btn-primary"
             onClick={verifyOtp}
             disabled={loading}
-            style={{ width: "100%", padding: "8px", marginTop: "8px" }}
           >
-            {loading ? "Verifying..." : "Verify OTP"}
+            {loading ? "Verifying..." : "Verify & Login"}
           </button>
-        </>
+          <button type="button" className="btn-secondary" onClick={() => setConfirmation(null)} style={{ marginTop: '0.5rem', width: '100%' }}>
+            Change Number
+          </button>
+        </div>
       )}
 
       {/* Required for Firebase reCAPTCHA */}
       <div id="recaptcha-container"></div>
+
+      <p style={{ fontSize: '0.75rem', marginTop: '1rem' }}>
+        Protected by Google reCAPTCHA
+      </p>
     </div>
   );
 }
