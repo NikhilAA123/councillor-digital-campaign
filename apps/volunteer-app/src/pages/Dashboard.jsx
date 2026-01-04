@@ -1,13 +1,14 @@
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import { useLanguage } from "../context/LanguageContext";
 import { countVoters } from "../utils/db";
 import { syncOfflineData } from "../utils/syncService";
 
 const Dashboard = () => {
     const { currentUser, logout } = useAuth();
     const navigate = useNavigate();
+    const { t } = useLanguage(); // Using language context
     const [stats, setStats] = useState({ local: 0, synced: 0 });
 
     useEffect(() => {
@@ -45,28 +46,28 @@ const Dashboard = () => {
     return (
         <div className="auth-card" style={{ textAlign: 'left' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem', marginBottom: '1rem' }}>
-                <h2 style={{ fontSize: '1.5rem' }}>Dashboard</h2>
+                <h2 style={{ fontSize: '1.5rem' }}>{t.dashboardTitle}</h2>
                 <div style={{ width: '32px', height: '32px', background: 'var(--primary-color)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>
                     {currentUser?.phoneNumber ? currentUser.phoneNumber.slice(-2) : 'V'}
                 </div>
             </div>
 
             <div style={{ background: 'var(--background-color)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
-                <p style={{ margin: 0, fontSize: '0.85rem' }}>Welcome back,</p>
+                <p style={{ margin: 0, fontSize: '0.85rem' }}>{t.welcome}</p>
                 <p style={{ margin: 0, fontWeight: '600', color: 'var(--text-main)' }}>{currentUser?.phoneNumber}</p>
                 <div style={{ marginTop: '0.5rem', display: 'inline-block', padding: '0.25rem 0.5rem', background: '#DCFCE7', color: '#166534', borderRadius: '4px', fontSize: '0.75rem', fontWeight: '600' }}>
-                    Active Volunteer
+                    {t.activeVolunteer}
                 </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: '#EFF6FF', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
                     <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }}>{stats.local}</h3>
-                    <p style={{ fontSize: '0.8rem', margin: 0 }}>Voters Added</p>
+                    <p style={{ fontSize: '0.8rem', margin: 0 }}>{t.votersAdded}</p>
                 </div>
                 <div style={{ background: '#FFF7ED', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
                     <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>{stats.synced}</h3>
-                    <p style={{ fontSize: '0.8rem', margin: 0 }}>Pending Sync</p>
+                    <p style={{ fontSize: '0.8rem', margin: 0 }}>{t.pendingSync}</p>
                 </div>
             </div>
 
@@ -75,11 +76,11 @@ const Dashboard = () => {
                 className="btn-primary"
                 style={{ marginBottom: '1rem' }}
             >
-                + Add New Voter
+                {t.addNewVoter}
             </button>
 
             <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
-                Logout
+                {t.logout}
             </button>
         </div>
     );
