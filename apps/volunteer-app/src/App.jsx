@@ -1,4 +1,7 @@
+ feature/voter-crm-update
+
  dev
+ main
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -9,20 +12,48 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import InstallPrompt from "./components/InstallPrompt";
 
 function App() {
+ feature/voter-crm-update
+
   return (
 
  dev
  feature/volunteer-app-init
 function App() {
+ main
   return (
-    <div style={{ padding: "1rem" }}>
-      <h2>Volunteer App</h2>
-      <p>Digital Campaign Platform</p>
-    </div>
+    <LanguageProvider>
+      <AuthProvider>
+        <Router>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/add-voter"
+              element={
+                <ProtectedRoute>
+                  <VoterForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          </Routes>
+          <InstallPrompt />
+        </Router>
+      </AuthProvider>
+    </LanguageProvider>
   );
 }
 
 export default App;
+ feature/voter-crm-update
+
 
  hotfix/firebase-config-cleanup
 
@@ -177,4 +208,5 @@ export default App;
  main
  dev
  dev
+ main
  main

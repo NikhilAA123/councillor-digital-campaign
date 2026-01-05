@@ -1,8 +1,13 @@
+ feature/voter-crm-update
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
  dev
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 
  feature/volunteer-app-init
+ main
  main
 :root {
   /* Brand Colors - Trustworthy Blue & Energetic Orange */
@@ -21,6 +26,8 @@
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+ feature/voter-crm-update
 
  dev
 
@@ -51,11 +58,14 @@
 
  dev
  main
+main
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+ feature/voter-crm-update
 
  dev
 
@@ -72,14 +82,19 @@ a:hover {
 
  dev
  main
+ main
 body {
   margin: 0;
   display: flex;
   place-items: center;
+ feature/voter-crm-update
+  justify-content: center;
+
  dev
   justify-content: center;
 
  feature/volunteer-app-init
+ main
  main
   min-width: 320px;
   min-height: 100vh;
@@ -159,6 +174,7 @@ input:focus {
   cursor: pointer;
   transition: background-color 0.2s;
   width: 100%;
+ feature/voter-crm-update
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -171,6 +187,20 @@ input:focus {
   opacity: 0.7;
 }
 
+
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+ main
 .btn-secondary {
   background-color: transparent;
   color: var(--text-secondary);
@@ -181,6 +211,11 @@ input:focus {
   cursor: pointer;
   transition: all 0.2s;
 }
+
+ feature/voter-crm-update
+.btn-secondary:hover {
+  border-color: var(--text-main);
+  color: var(--text-main);
 
  dev
 .btn-secondary:hover {
@@ -305,5 +340,6 @@ input:focus {
   border-color: var(--text-main);
   color: var(--text-main);
  dev
+ main
  main
 }

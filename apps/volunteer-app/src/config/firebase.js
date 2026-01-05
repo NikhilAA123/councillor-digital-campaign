@@ -13,6 +13,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+ feature/voter-crm-update
+export const db = getFirestore(app);
+
  dev
 export const db = getFirestore(app);
 
@@ -34,6 +37,7 @@ export const db = getFirestore(app);
  dev
  dev
 
+ main
  main
  main
  main

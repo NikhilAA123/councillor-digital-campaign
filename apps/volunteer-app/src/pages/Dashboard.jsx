@@ -1,6 +1,8 @@
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+ feature/voter-crm-update
+
  dev
 
  dev
@@ -13,9 +15,16 @@ import { syncOfflineData } from "../utils/syncService";
  main
  feature/localization
  main
+ main
 import { useLanguage } from "../context/LanguageContext";
 import { countVoters } from "../utils/db";
 import { syncOfflineData } from "../utils/syncService";
+
+ feature/voter-crm-update
+const Dashboard = () => {
+    const { currentUser, logout } = useAuth();
+    const navigate = useNavigate();
+    const { t } = useLanguage(); // Using language context
 
  dev
 const Dashboard = () => {
@@ -53,12 +62,15 @@ main
  main
  main
  main
+ main
     const [stats, setStats] = useState({ local: 0, synced: 0 });
 
     useEffect(() => {
         const loadStats = async () => {
             const localCount = await countVoters();
             setStats(prev => ({ ...prev, local: localCount }));
+ feature/voter-crm-update
+
  dev
 
  dev
@@ -76,6 +88,7 @@ main
  dev
  dev
 
+ main
  main
  main
  main
@@ -97,6 +110,8 @@ main
         };
         loadStats();
     }, [currentUser]);
+ feature/voter-crm-update
+
 dev
 
  dev
@@ -110,6 +125,7 @@ dev
  dev
  dev
 
+ main
  main
  main
  main
@@ -126,6 +142,9 @@ dev
     return (
         <div className="auth-card" style={{ textAlign: 'left' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem', marginBottom: '1rem' }}>
+ feature/voter-crm-update
+                <h2 style={{ fontSize: '1.5rem' }}>{t.dashboardTitle}</h2>
+
  dev
                 <h2 style={{ fontSize: '1.5rem' }}>{t.dashboardTitle}</h2>
 
@@ -139,12 +158,15 @@ dev
  main
  main
  main
+ main
                 <div style={{ width: '32px', height: '32px', background: 'var(--primary-color)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>
                     {currentUser?.phoneNumber ? currentUser.phoneNumber.slice(-2) : 'V'}
                 </div>
             </div>
 
             <div style={{ background: 'var(--background-color)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
+ feature/voter-crm-update
+
  dev
 
  dev
@@ -160,12 +182,16 @@ dev
                     Active Volunteer
 
  main
+ main
                 <p style={{ margin: 0, fontSize: '0.85rem' }}>{t.welcome}</p>
                 <p style={{ margin: 0, fontWeight: '600', color: 'var(--text-main)' }}>{currentUser?.phoneNumber}</p>
                 <div style={{ marginTop: '0.5rem', display: 'inline-block', padding: '0.25rem 0.5rem', background: '#DCFCE7', color: '#166534', borderRadius: '4px', fontSize: '0.75rem', fontWeight: '600' }}>
                     {t.activeVolunteer}
+ feature/voter-crm-update
+
  dev
 
+ main
  main
  main
  main
@@ -175,6 +201,8 @@ dev
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: '#EFF6FF', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
                     <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }}>{stats.local}</h3>
+ feature/voter-crm-update
+
  dev
 
  dev
@@ -184,11 +212,14 @@ dev
  main
  feature/localization
  main
+ main
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>{t.votersAdded}</p>
                 </div>
                 <div style={{ background: '#FFF7ED', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
                     <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>{stats.synced}</h3>
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>{t.pendingSync}</p>
+ feature/voter-crm-update
+
 dev
 
 
@@ -210,6 +241,7 @@ dev
 main
  main
  main
+ main
                 </div>
             </div>
 
@@ -218,6 +250,8 @@ main
                 className="btn-primary"
                 style={{ marginBottom: '1rem' }}
             >
+ feature/voter-crm-update
+
  dev
 
  dev
@@ -227,11 +261,14 @@ main
  main
  feature/localization
  main
+ main
                 {t.addNewVoter}
             </button>
 
             <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
                 {t.logout}
+ feature/voter-crm-update
+
  dev
 =
 
@@ -251,6 +288,7 @@ feature/data-sync
 
  dev
 main
+ main
  main
  main
             </button>
