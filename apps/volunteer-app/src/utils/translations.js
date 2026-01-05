@@ -22,6 +22,7 @@ export const translations = {
         addVoterTitle: "Add Voter",
         voterName: "Voter Name",
         ward: "Ward / Area",
+ dev
         booth: "Booth Number (Optional)",
         supportStatus: "Support Status",
         mainIssue: "Main Issue (Optional)",
@@ -34,6 +35,10 @@ export const translations = {
             opposer: "❌ Opposer / Not Interested"
         },
 
+
+        mainIssue: "Main Issue (Optional)",
+        selectIssue: "Select an issue...",
+ main
         saveVoter: "Save Voter",
         saving: "Saving...",
 
@@ -75,6 +80,7 @@ export const translations = {
         addVoterTitle: "ఓటరును జోడించండి",
         voterName: "ఓటరు పేరు",
         ward: "వార్డు / ప్రాంతం",
+ dev
         booth: "బూత్ సంఖ్య (ఐచ్ఛికం)",
         supportStatus: "మద్దతు స్థితి",
         mainIssue: "ప్రధాన సమస్య (ఐచ్ఛికం)",
@@ -86,6 +92,10 @@ export const translations = {
             opposer: "❌ వ్యతిరేకి / ఆసక్తి లేదు"
         },
 
+
+        mainIssue: "ప్రధాన సమస్య (ఐచ్ఛికం)",
+        selectIssue: "సమస్యను ఎంచుకోండి...",
+main
         saveVoter: "ఓటరును సేవ్ చేయండి",
         saving: "సేవ్ చేస్తోంది...",
 
@@ -127,6 +137,7 @@ export const translations = {
         addVoterTitle: "मतदाता जोड़ें",
         voterName: "मतदाता का नाम",
         ward: "वार्ड / क्षेत्र",
+ dev
         booth: "बूथ संख्या (वैकल्पिक)",
         supportStatus: "समर्थन स्थिति",
         mainIssue: "मुख्य मुद्दा (वैकल्पिक)",
@@ -138,6 +149,10 @@ export const translations = {
             opposer: "❌ विरोधी / रुचि नहीं"
         },
 
+
+        mainIssue: "मुख्य मुद्दा (वैकल्पिक)",
+        selectIssue: "एक मुद्दा चुनें...",
+ main
         saveVoter: "मतदाता सहेजें",
         saving: "सहेज रहा है...",
 

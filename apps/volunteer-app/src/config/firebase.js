@@ -13,4 +13,27 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+ dev
 export const db = getFirestore(app);
+
+ dev
+ hotfix/firebase-config-cleanup
+
+ feature/data-sync
+export const db = getFirestore(app);
+main
+
+ feature/localization
+export const db = getFirestore(app);
+
+feature/offline-voter-form
+
+export const db = getFirestore(app);
+ dev
+ dev
+ dev
+ dev
+
+ main
+ main
+ main
