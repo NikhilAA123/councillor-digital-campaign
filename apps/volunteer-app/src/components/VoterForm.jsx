@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { addVoter } from '../utils/db';
-import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+import { checkDuplicateVoter } from '../utils/syncService';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../utils/translations';
 
 const VoterForm = () => {
+    const { language } = useLanguage();
+    const t = translations[language];
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
@@ -71,12 +72,12 @@ const VoterForm = () => {
                 >
                     ←
                 </button>
-                <h2 style={{ fontSize: '1.5rem' }}>Add Voter</h2>
+                <h2 style={{ fontSize: '1.5rem' }}>{t.addVoterTitle}</h2>
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div className="input-group">
-                    <label className="input-label" htmlFor="name">Voter Name *</label>
+                    <label className="input-label" htmlFor="name">{t.voterName} *</label>
                     <input
                         id="name"
                         name="name"
@@ -104,7 +105,7 @@ const VoterForm = () => {
                 </div>
 
                 <div className="input-group">
-                    <label className="input-label" htmlFor="ward">Ward / Area *</label>
+                    <label className="input-label" htmlFor="ward">{t.ward} *</label>
                     <input
                         id="ward"
                         name="ward"
@@ -117,7 +118,44 @@ const VoterForm = () => {
                 </div>
 
                 <div className="input-group">
-                    <label className="input-label" htmlFor="issue">Main Issue (Optional)</label>
+                    <label className="input-label" htmlFor="booth">{t.booth}</label>
+                    <input
+                        id="booth"
+                        name="booth"
+                        type="text"
+                        placeholder="e.g. 12A"
+                        value={formData.booth}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className="input-group">
+                    <label className="input-label" htmlFor="supportStatus">{t.supportStatus} *</label>
+                    <select
+                        id="supportStatus"
+                        name="supportStatus"
+                        value={formData.supportStatus}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem 1rem',
+                            borderRadius: '8px',
+                            border: '1px solid var(--border-color)',
+                            fontSize: '1rem',
+                            backgroundColor: 'white',
+                            outline: 'none'
+                        }}
+                    >
+                        <option value="">Select status...</option>
+                        <option value="supporter">{t.statusOptions.supporter}</option>
+                        <option value="undecided">{t.statusOptions.undecided}</option>
+                        <option value="opposer">{t.statusOptions.opposer}</option>
+                    </select>
+                </div>
+
+                <div className="input-group">
+                    <label className="input-label" htmlFor="issue">{t.mainIssue}</label>
                     <select
                         id="issue"
                         name="issue"
@@ -148,7 +186,7 @@ const VoterForm = () => {
                     disabled={loading}
                     style={{ marginTop: '1rem' }}
                 >
-                    {loading ? "Saving..." : "Save Voter Offline"}
+                    {loading ? t.saving : t.saveVoter}
                 </button>
             </form>
         </div>
