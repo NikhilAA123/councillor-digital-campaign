@@ -1,3 +1,15 @@
+ feature/volunteer-app-init
+function App() {
+  return (
+    <div style={{ padding: "1rem" }}>
+      <h2>Volunteer App</h2>
+      <p>Digital Campaign Platform</p>
+    </div>
+  );
+}
+
+export default App;
+
  hotfix/firebase-config-cleanup
 
  dev
@@ -115,4 +127,5 @@ export default App;
  dev
 
  main
+ dev
  dev
