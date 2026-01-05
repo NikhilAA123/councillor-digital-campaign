@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { addVoter } from '../utils/db';
 import { checkDuplicateVoter } from '../utils/syncService';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../utils/translations';
