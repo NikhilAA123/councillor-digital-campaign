@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+ hotfix/firebase-config-cleanup
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "vite-plugin-pwa": "^1.2.0"
+
  dev
  feature/localization
 
@@ -46,6 +51,7 @@ main
  dev
 
  main
+ dev
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

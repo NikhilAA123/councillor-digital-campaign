@@ -1,3 +1,5 @@
+ hotfix/firebase-config-cleanup
+
  dev
  feature/localization
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
@@ -20,6 +22,7 @@ import { AuthProvider } from "./context/AuthContext";
  dev
 
  main
+ dev
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import VoterForm from "./components/VoterForm";
@@ -64,6 +67,8 @@ function App() {
 }
 
 export default App;
+
+ hotfix/firebase-config-cleanup
 
     <AuthProvider>
       <Router>
@@ -110,3 +115,4 @@ export default App;
  dev
 
  main
+ dev

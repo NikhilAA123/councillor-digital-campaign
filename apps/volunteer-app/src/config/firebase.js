@@ -13,11 +13,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+ hotfix/firebase-config-cleanup
+
  feature/localization
 export const db = getFirestore(app);
 
 feature/offline-voter-form
 
 export const db = getFirestore(app);
+ dev
  dev
  dev
