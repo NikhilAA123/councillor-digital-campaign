@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+ dev
+
  feature/data-sync
 import { addVoter } from '../utils/db';
 import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
 
 
+ main
  feature/localization
 import { addVoter } from '../utils/db';
 import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
@@ -27,13 +30,19 @@ const VoterForm = () => {
         ward: '',
         issue: '',
     });
+ dev
+
  feature/data-sync
 
+main
  feature/localization
 
  feature/offline-voter-form
 
  dev
+ dev
+
+ main
  main
     const [duplicateWarning, setDuplicateWarning] = useState(null);
 
@@ -47,12 +56,18 @@ const VoterForm = () => {
             }
         }
     };
+ dev
+
  feature/data-sync
 
+ main
 feature/localization
 
 dev
  dev
+ dev
+
+ main
  main
 
     const handleChange = (e) => {
@@ -125,8 +140,11 @@ dev
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
+ dev
+
  feature/data-sync
 
+ main
  feature/localization
 
  feature/offline-voter-form
@@ -134,13 +152,19 @@ dev
                     />
 
  dev
+ dev
+
+ main
  main
                         onBlur={checkPhone}
                         required
                     />
                     {duplicateWarning && <p style={{ color: '#EF4444', fontSize: '0.8rem', marginTop: '0.25rem' }}>{duplicateWarning}</p>}
+ dev
+
  feature/data-sync
 
+ main
  feature/localization
 
  dev
