@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+ feature/voter-crm-update
+
+ dev
+ main
 import { addVoter } from '../utils/db';
 import { checkDuplicateVoter } from '../utils/syncService';
 import { useLanguage } from '../context/LanguageContext';
@@ -8,16 +12,68 @@ import { translations } from '../utils/translations';
 const VoterForm = () => {
     const { language } = useLanguage();
     const t = translations[language];
+ feature/voter-crm-update
+
+
+ dev
+
+ feature/data-sync
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+
+
+ main
+ feature/localization
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+
+ feature/offline-voter-form
+import { addVoter } from '../utils/db'; // We'll make sure this path is correct
+
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+ dev
+dev
+
+ main
+const VoterForm = () => {
+main
+ main
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         ward: '',
+ feature/voter-crm-update
+
+dev
+ main
         booth: '',
         supportStatus: '',
         issue: '',
     });
+ feature/voter-crm-update
+
+
+        issue: '',
+    });
+ dev
+
+ feature/data-sync
+
+main
+ feature/localization
+
+ feature/offline-voter-form
+
+ dev
+ dev
+
+ main
+ main
+ main
+ main
     const [duplicateWarning, setDuplicateWarning] = useState(null);
 
     const checkPhone = async () => {
@@ -30,6 +86,25 @@ const VoterForm = () => {
             }
         }
     };
+ feature/voter-crm-update
+
+ dev
+
+ dev
+
+ feature/data-sync
+
+ main
+feature/localization
+
+dev
+ dev
+ dev
+
+ main
+ main
+ main
+ main
 
     const handleChange = (e) => {
         setFormData({
@@ -75,12 +150,28 @@ const VoterForm = () => {
                 >
                     ←
                 </button>
+feature/voter-crm-update
                 <h2 style={{ fontSize: '1.5rem' }}>{t.addVoterTitle}</h2>
+
+ dev
+                <h2 style={{ fontSize: '1.5rem' }}>{t.addVoterTitle}</h2>
+
+                <h2 style={{ fontSize: '1.5rem' }}>Add Voter</h2>
+ main
+ main
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div className="input-group">
+ feature/voter-crm-update
                     <label className="input-label" htmlFor="name">{t.voterName} *</label>
+
+ dev
+                    <label className="input-label" htmlFor="name">{t.voterName} *</label>
+
+                    <label className="input-label" htmlFor="name">Voter Name *</label>
+ main
+ main
                     <input
                         id="name"
                         name="name"
@@ -101,14 +192,59 @@ const VoterForm = () => {
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
+ feature/voter-crm-update
+
+dev
+
+ dev
+
+ feature/data-sync
+
+ main
+ feature/localization
+
+ feature/offline-voter-form
+                        required
+                    />
+
+ dev
+ dev
+
+ main
+ main
+ main
+ main
                         onBlur={checkPhone}
                         required
                     />
                     {duplicateWarning && <p style={{ color: '#EF4444', fontSize: '0.8rem', marginTop: '0.25rem' }}>{duplicateWarning}</p>}
+ feature/voter-crm-update
+
+ dev
+ main
                 </div>
 
                 <div className="input-group">
                     <label className="input-label" htmlFor="ward">{t.ward} *</label>
+ feature/voter-crm-update
+
+
+ dev
+
+ feature/data-sync
+
+ main
+ feature/localization
+
+ dev
+ dev
+ main
+                </div>
+
+                <div className="input-group">
+                    <label className="input-label" htmlFor="ward">Ward / Area *</label>
+main
+ main
                     <input
                         id="ward"
                         name="ward"
@@ -121,6 +257,10 @@ const VoterForm = () => {
                 </div>
 
                 <div className="input-group">
+ feature/voter-crm-update
+
+ dev
+ main
                     <label className="input-label" htmlFor="booth">{t.booth}</label>
                     <input
                         id="booth"
@@ -159,6 +299,12 @@ const VoterForm = () => {
 
                 <div className="input-group">
                     <label className="input-label" htmlFor="issue">{t.mainIssue}</label>
+ feature/voter-crm-update
+
+
+                    <label className="input-label" htmlFor="issue">Main Issue (Optional)</label>
+main
+ main
                     <select
                         id="issue"
                         name="issue"
@@ -189,7 +335,14 @@ const VoterForm = () => {
                     disabled={loading}
                     style={{ marginTop: '1rem' }}
                 >
+ feature/voter-crm-update
+
+ dev
                     {loading ? t.saving : t.saveVoter}
+
+                    {loading ? "Saving..." : "Save Voter Offline"}
+ main
+ main
                 </button>
             </form>
         </div>
