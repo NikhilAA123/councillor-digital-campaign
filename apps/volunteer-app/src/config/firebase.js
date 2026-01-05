@@ -13,6 +13,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+ feature/data-sync
+export const db = getFirestore(app);
+
  feature/localization
 export const db = getFirestore(app);
 
@@ -21,3 +24,4 @@ feature/offline-voter-form
 export const db = getFirestore(app);
  dev
  dev
+ main

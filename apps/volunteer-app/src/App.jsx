@@ -1,3 +1,7 @@
+ feature/data-sync
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+
  dev
  feature/localization
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
@@ -20,10 +24,16 @@ import { AuthProvider } from "./context/AuthContext";
  dev
 
  main
+ main
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import VoterForm from "./components/VoterForm";
 import ProtectedRoute from "./components/ProtectedRoute";
+ feature/data-sync
+
+function App() {
+  return (
+
 import InstallPrompt from "./components/InstallPrompt";
 
 function App() {
@@ -65,6 +75,7 @@ function App() {
 
 export default App;
 
+ main
     <AuthProvider>
       <Router>
         <Routes>
@@ -103,10 +114,13 @@ export default App;
 }
 
 export default App;
+ feature/data-sync
+
 
  main
  main
  dev
  dev
 
+ main
  main
