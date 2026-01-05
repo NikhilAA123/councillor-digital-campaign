@@ -1,3 +1,4 @@
+ dev
  feature/volunteer-app-init
 function App() {
   return (
@@ -11,6 +12,11 @@ function App() {
 export default App;
 
  hotfix/firebase-config-cleanup
+
+ feature/data-sync
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+ main
 
  dev
  feature/localization
@@ -35,10 +41,22 @@ import { AuthProvider } from "./context/AuthContext";
 
  main
  dev
+ dev
+
+ main
+ main
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import VoterForm from "./components/VoterForm";
 import ProtectedRoute from "./components/ProtectedRoute";
+ dev
+
+ feature/data-sync
+
+function App() {
+  return (
+
+ main
 import InstallPrompt from "./components/InstallPrompt";
 
 function App() {
@@ -80,8 +98,12 @@ function App() {
 
 export default App;
 
+ dev
  hotfix/firebase-config-cleanup
 
+
+ main
+ main
     <AuthProvider>
       <Router>
         <Routes>
@@ -120,6 +142,13 @@ export default App;
 }
 
 export default App;
+ feature/data-sync
+
+
+ main
+ main
+ dev
+ dev
 
  main
  main
