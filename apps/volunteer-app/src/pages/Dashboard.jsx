@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
  dev
 
+ dev
+
  feature/data-sync
 import { useEffect, useState } from "react";
 import { countVoters } from "../utils/db";
@@ -10,9 +12,16 @@ import { syncOfflineData } from "../utils/syncService";
 
  main
  feature/localization
+ main
 import { useLanguage } from "../context/LanguageContext";
 import { countVoters } from "../utils/db";
 import { syncOfflineData } from "../utils/syncService";
+
+ dev
+const Dashboard = () => {
+    const { currentUser, logout } = useAuth();
+    const navigate = useNavigate();
+    const { t } = useLanguage(); // Using language context
 
 feature/offline-voter-form
 import { countVoters } from "../utils/db";
@@ -43,12 +52,15 @@ main
 
  main
  main
+ main
     const [stats, setStats] = useState({ local: 0, synced: 0 });
 
     useEffect(() => {
         const loadStats = async () => {
             const localCount = await countVoters();
             setStats(prev => ({ ...prev, local: localCount }));
+ dev
+
  dev
 
  feature/data-sync
@@ -64,6 +76,7 @@ main
  dev
  dev
 
+ main
  main
  main
 
@@ -84,6 +97,8 @@ main
         };
         loadStats();
     }, [currentUser]);
+dev
+
  dev
 
  feature/data-sync
@@ -95,6 +110,7 @@ dev
  dev
  dev
 
+ main
  main
  main
 
@@ -113,10 +129,14 @@ dev
  dev
                 <h2 style={{ fontSize: '1.5rem' }}>{t.dashboardTitle}</h2>
 
+ dev
+                <h2 style={{ fontSize: '1.5rem' }}>{t.dashboardTitle}</h2>
+
  feature/data-sync
                 <h2 style={{ fontSize: '1.5rem' }}>Dashboard</h2>
 
                 <h2 style={{ fontSize: '1.5rem' }}>{t.dashboardTitle}</h2>
+ main
  main
  main
                 <div style={{ width: '32px', height: '32px', background: 'var(--primary-color)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>
@@ -125,6 +145,8 @@ dev
             </div>
 
             <div style={{ background: 'var(--background-color)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
+ dev
+
  dev
                 <p style={{ margin: 0, fontSize: '0.85rem' }}>{t.welcome}</p>
                 <p style={{ margin: 0, fontWeight: '600', color: 'var(--text-main)' }}>{currentUser?.phoneNumber}</p>
@@ -137,10 +159,14 @@ dev
                 <div style={{ marginTop: '0.5rem', display: 'inline-block', padding: '0.25rem 0.5rem', background: '#DCFCE7', color: '#166534', borderRadius: '4px', fontSize: '0.75rem', fontWeight: '600' }}>
                     Active Volunteer
 
+ main
                 <p style={{ margin: 0, fontSize: '0.85rem' }}>{t.welcome}</p>
                 <p style={{ margin: 0, fontWeight: '600', color: 'var(--text-main)' }}>{currentUser?.phoneNumber}</p>
                 <div style={{ marginTop: '0.5rem', display: 'inline-block', padding: '0.25rem 0.5rem', background: '#DCFCE7', color: '#166534', borderRadius: '4px', fontSize: '0.75rem', fontWeight: '600' }}>
                     {t.activeVolunteer}
+ dev
+
+ main
  main
  main
                 </div>
@@ -151,15 +177,20 @@ dev
                     <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }}>{stats.local}</h3>
  dev
 
+ dev
+
  feature/data-sync
 
  main
  feature/localization
+ main
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>{t.votersAdded}</p>
                 </div>
                 <div style={{ background: '#FFF7ED', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
                     <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>{stats.synced}</h3>
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>{t.pendingSync}</p>
+dev
+
 
  dev
 
@@ -178,6 +209,7 @@ dev
  dev
 main
  main
+ main
                 </div>
             </div>
 
@@ -188,15 +220,20 @@ main
             >
  dev
 
+ dev
+
  feature/data-sync
 
  main
  feature/localization
+ main
                 {t.addNewVoter}
             </button>
 
             <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
                 {t.logout}
+ dev
+=
 
 dev
 
@@ -214,6 +251,7 @@ feature/data-sync
 
  dev
 main
+ main
  main
             </button>
         </div>

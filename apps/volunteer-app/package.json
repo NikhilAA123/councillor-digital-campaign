@@ -11,6 +11,16 @@
   },
   "dependencies": {
  dev
+    "firebase": "^11.1.0",
+    "idb": "^8.0.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.1.1",
+    "vite-plugin-pwa": "^0.21.1"
+  },
+  "devDependencies": {
+
+ dev
  feature/volunteer-app-init
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -89,6 +99,7 @@ main
  main
   },
   "devDependencies": {
+ main
     "@eslint/js": "^9.17.0",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
@@ -99,5 +110,8 @@ main
     "globals": "^15.14.0",
     "vite": "^6.0.5"
  dev
+
+ dev
+ main
   }
 }

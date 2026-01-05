@@ -1,4 +1,17 @@
  dev
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import { LanguageProvider } from "./context/LanguageContext";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import VoterForm from "./components/VoterForm";
+import ProtectedRoute from "./components/ProtectedRoute";
+import InstallPrompt from "./components/InstallPrompt";
+
+function App() {
+  return (
+
+ dev
  feature/volunteer-app-init
 function App() {
   return (
@@ -66,6 +79,7 @@ function App() {
  main
   return (
  feature/localization
+ main
     <LanguageProvider>
       <AuthProvider>
         <Router>
@@ -93,6 +107,8 @@ function App() {
         </Router>
       </AuthProvider>
     </LanguageProvider>
+ dev
+
   );
 }
 
@@ -128,6 +144,7 @@ export default App;
         </Routes>
       </Router>
     </AuthProvider>
+ main
   );
  dev
 }
@@ -142,6 +159,8 @@ export default App;
 }
 
 export default App;
+ dev
+
  feature/data-sync
 
 
@@ -158,3 +177,4 @@ export default App;
  main
  dev
  dev
+ main

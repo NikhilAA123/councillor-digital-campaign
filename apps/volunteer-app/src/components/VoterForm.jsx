@@ -1,6 +1,16 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
  dev
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../utils/translations';
+
+const VoterForm = () => {
+    const { language } = useLanguage();
+    const t = translations[language];
+
+ dev
 
  feature/data-sync
 import { addVoter } from '../utils/db';
@@ -22,12 +32,19 @@ dev
 
  main
 const VoterForm = () => {
+main
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         ward: '',
+dev
+        booth: '',
+        supportStatus: '',
+        issue: '',
+    });
+
         issue: '',
     });
  dev
@@ -44,6 +61,7 @@ main
 
  main
  main
+ main
     const [duplicateWarning, setDuplicateWarning] = useState(null);
 
     const checkPhone = async () => {
@@ -58,6 +76,8 @@ main
     };
  dev
 
+ dev
+
  feature/data-sync
 
  main
@@ -67,6 +87,7 @@ dev
  dev
  dev
 
+ main
  main
  main
 
@@ -114,12 +135,20 @@ dev
                 >
                     ←
                 </button>
+ dev
+                <h2 style={{ fontSize: '1.5rem' }}>{t.addVoterTitle}</h2>
+
                 <h2 style={{ fontSize: '1.5rem' }}>Add Voter</h2>
+ main
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div className="input-group">
+ dev
+                    <label className="input-label" htmlFor="name">{t.voterName} *</label>
+
                     <label className="input-label" htmlFor="name">Voter Name *</label>
+ main
                     <input
                         id="name"
                         name="name"
@@ -140,6 +169,8 @@ dev
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
+dev
+
  dev
 
  feature/data-sync
@@ -156,10 +187,17 @@ dev
 
  main
  main
+ main
                         onBlur={checkPhone}
                         required
                     />
                     {duplicateWarning && <p style={{ color: '#EF4444', fontSize: '0.8rem', marginTop: '0.25rem' }}>{duplicateWarning}</p>}
+ dev
+                </div>
+
+                <div className="input-group">
+                    <label className="input-label" htmlFor="ward">{t.ward} *</label>
+
  dev
 
  feature/data-sync
@@ -174,6 +212,7 @@ dev
 
                 <div className="input-group">
                     <label className="input-label" htmlFor="ward">Ward / Area *</label>
+main
                     <input
                         id="ward"
                         name="ward"
@@ -186,7 +225,48 @@ dev
                 </div>
 
                 <div className="input-group">
+ dev
+                    <label className="input-label" htmlFor="booth">{t.booth}</label>
+                    <input
+                        id="booth"
+                        name="booth"
+                        type="text"
+                        placeholder="e.g. 12A"
+                        value={formData.booth}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className="input-group">
+                    <label className="input-label" htmlFor="supportStatus">{t.supportStatus} *</label>
+                    <select
+                        id="supportStatus"
+                        name="supportStatus"
+                        value={formData.supportStatus}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem 1rem',
+                            borderRadius: '8px',
+                            border: '1px solid var(--border-color)',
+                            fontSize: '1rem',
+                            backgroundColor: 'white',
+                            outline: 'none'
+                        }}
+                    >
+                        <option value="">Select status...</option>
+                        <option value="supporter">{t.statusOptions.supporter}</option>
+                        <option value="undecided">{t.statusOptions.undecided}</option>
+                        <option value="opposer">{t.statusOptions.opposer}</option>
+                    </select>
+                </div>
+
+                <div className="input-group">
+                    <label className="input-label" htmlFor="issue">{t.mainIssue}</label>
+
                     <label className="input-label" htmlFor="issue">Main Issue (Optional)</label>
+main
                     <select
                         id="issue"
                         name="issue"
@@ -217,7 +297,11 @@ dev
                     disabled={loading}
                     style={{ marginTop: '1rem' }}
                 >
+ dev
+                    {loading ? t.saving : t.saveVoter}
+
                     {loading ? "Saving..." : "Save Voter Offline"}
+ main
                 </button>
             </form>
         </div>
