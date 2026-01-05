@@ -1,3 +1,4 @@
+ feature/volunteer-app-init
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -7,12 +8,35 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand Colors - Trustworthy Blue & Energetic Orange */
+  --primary-color: #2563EB; /* Royal Blue */
+  --primary-hover: #1D4ED8;
+  --secondary-color: #F97316; /* Clean Orange */
+  --background-color: #F3F4F6; /* Light Gray/White smoke */
+  --card-bg: #FFFFFF;
+  --text-main: #111827; /* Near Black */
+  --text-secondary: #6B7280; /* Gray */
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+ dev
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+feature/volunteer-app-init
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,10 +46,13 @@ a:hover {
   color: #535bf2;
 }
 
+
+ dev
 body {
   margin: 0;
   display: flex;
   place-items: center;
+ feature/volunteer-app-init
   min-width: 320px;
   min-height: 100vh;
 }
@@ -65,4 +92,111 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-main);
+}
+
+#root {
+  width: 100%;
+  max-width: 480px; /* Mobile focused max-width */
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* Custom Card Style */
+.auth-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  border-top: 5px solid var(--primary-color);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.input-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+  box-sizing: border-box; /* Important for width */
+  transition: all 0.2s;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+   border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-main);
+  color: var(--text-main);
+ dev
 }
