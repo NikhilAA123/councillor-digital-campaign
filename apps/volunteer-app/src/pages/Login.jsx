@@ -5,9 +5,17 @@ import {
 } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
+ feature/data-sync
 
 function Login() {
   const navigate = useNavigate();
+
+import { useLanguage } from "../context/LanguageContext";
+
+function Login() {
+  const navigate = useNavigate();
+  const { t, language, setLanguage } = useLanguage();
+ main
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
   const [confirmation, setConfirmation] = useState(null);
@@ -40,7 +48,7 @@ function Login() {
       );
 
       setConfirmation(confirmationResult);
-      alert("OTP sent successfully");
+      // alert("OTP sent successfully");
     } catch (error) {
       console.error("OTP Error:", error);
       alert(error.message);
@@ -58,7 +66,10 @@ function Login() {
     try {
       setLoading(true);
       await confirmation.confirm(otp);
+ feature/data-sync
       await confirmation.confirm(otp);
+
+ main
       navigate("/dashboard");
     } catch (error) {
       console.error("OTP Verify Error:", error);
@@ -68,16 +79,44 @@ function Login() {
     }
   };
 
+ feature/data-sync
   return (
     <div className="auth-card">
       <div>
         <h1 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>Councillor Campaign</h1>
         <h3>Volunteer Login</h3>
         <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Enter your mobile number to access the volunteer dashboard.</p>
+
+  const langBtnStyle = (lang) => ({
+    flex: 1,
+    padding: '0.5rem',
+    border: '1px solid var(--border-color)',
+    background: language === lang ? 'var(--primary-color)' : 'white',
+    color: language === lang ? 'white' : 'var(--text-main)',
+    cursor: 'pointer',
+    fontSize: '0.9rem',
+    fontWeight: '600'
+  });
+
+  return (
+    <div className="auth-card">
+      {/* Language Toggle */}
+      <div style={{ display: 'flex', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem', border: '1px solid var(--border-color)' }}>
+        <button onClick={() => setLanguage('en')} style={langBtnStyle('en')}>English</button>
+        <button onClick={() => setLanguage('te')} style={langBtnStyle('te')}>తెలుగు</button>
+        <button onClick={() => setLanguage('hi')} style={langBtnStyle('hi')}>हिंदी</button>
+      </div>
+
+      <div>
+        <h1 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>{t.appTitle}</h1>
+        <h3>{t.loginSubtitle}</h3>
+        <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>{t.enterMobile}</p>
+ main
       </div>
 
       {!confirmation ? (
         <div className="input-group">
+ feature/data-sync
           <label className="input-label" htmlFor="phone">Mobile Number</label>
           <input
             id="phone"
@@ -98,6 +137,28 @@ function Login() {
         <div className="input-group">
           <label className="input-label" htmlFor="otp">Enter Verification Code</label>
           <input
+
+          <label className="input-label" htmlFor="phone">{t.phoneLabel}</label>
+          <input
+            id="phone"
+            type="tel"
+            placeholder="+91 98765 43210"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+          <button
+            className="btn-primary"
+            onClick={sendOtp}
+            disabled={loading}
+          >
+            {loading ? t.sending : t.sendCode}
+          </button>
+        </div>
+      ) : (
+        <div className="input-group">
+          <label className="input-label" htmlFor="otp">{t.enterOtp}</label>
+          <input
+ main
             id="otp"
             type="number"
             placeholder="123456"
@@ -110,11 +171,19 @@ function Login() {
             onClick={verifyOtp}
             disabled={loading}
           >
+ feature/data-sync
             {loading ? "Verifying..." : "Verify & Login"}
           </button>
           <button type="button" className="btn-secondary" onClick={() => setConfirmation(null)} style={{ marginTop: '0.5rem', width: '100%' }}>
             Change Number
           </button>
+
+            {loading ? t.verifying : t.verify}
+          </button>
+          <button type="button" className="btn-secondary" onClick={() => setConfirmation(null)} style={{ marginTop: '0.5rem', width: '100%' }}>
+            {t.changeNumber}
+          </button>
+ main
         </div>
       )}
 

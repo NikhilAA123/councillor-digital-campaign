@@ -1,8 +1,23 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+ feature/data-sync
 import { addVoter } from '../utils/db';
 import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
 
+
+ feature/localization
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+
+ feature/offline-voter-form
+import { addVoter } from '../utils/db'; // We'll make sure this path is correct
+
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+ dev
+dev
+
+ main
 const VoterForm = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -12,6 +27,14 @@ const VoterForm = () => {
         ward: '',
         issue: '',
     });
+ feature/data-sync
+
+ feature/localization
+
+ feature/offline-voter-form
+
+ dev
+ main
     const [duplicateWarning, setDuplicateWarning] = useState(null);
 
     const checkPhone = async () => {
@@ -24,6 +47,13 @@ const VoterForm = () => {
             }
         }
     };
+ feature/data-sync
+
+feature/localization
+
+dev
+ dev
+ main
 
     const handleChange = (e) => {
         setFormData({
@@ -95,10 +125,27 @@ const VoterForm = () => {
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
+ feature/data-sync
+
+ feature/localization
+
+ feature/offline-voter-form
+                        required
+                    />
+
+ dev
+ main
                         onBlur={checkPhone}
                         required
                     />
                     {duplicateWarning && <p style={{ color: '#EF4444', fontSize: '0.8rem', marginTop: '0.25rem' }}>{duplicateWarning}</p>}
+ feature/data-sync
+
+ feature/localization
+
+ dev
+ dev
+ main
                 </div>
 
                 <div className="input-group">
