@@ -1,8 +1,11 @@
+ dev
  feature/localization
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { LanguageProvider } from "./context/LanguageContext";
 
+
+ main
  dev
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
@@ -14,6 +17,9 @@ import { AuthProvider } from "./context/AuthContext";
  main
  main
  dev
+ dev
+
+ main
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import VoterForm from "./components/VoterForm";
@@ -101,3 +107,6 @@ export default App;
  main
  main
  dev
+ dev
+
+ main

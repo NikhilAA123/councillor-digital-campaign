@@ -10,21 +10,30 @@
     "preview": "vite preview"
   },
   "dependencies": {
+ dev
  feature/localization
 
+
+ main
 dev
 
  feature/offline-voter-form
  main
  dev
+ dev
+
+ main
     "firebase": "^11.1.0",
     "idb": "^8.0.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.1.1",
     "vite-plugin-pwa": "^0.21.1"
+ dev
  feature/localization
 
+
+main
  dev
 
 
@@ -34,6 +43,9 @@ dev
  main
  main
  dev
+ dev
+
+ main
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
