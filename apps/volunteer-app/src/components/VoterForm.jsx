@@ -10,6 +10,8 @@ const VoterForm = () => {
         name: '',
         phone: '',
         ward: '',
+        booth: '',
+        supportStatus: '',
         issue: '',
     });
     const [duplicateWarning, setDuplicateWarning] = useState(null);
