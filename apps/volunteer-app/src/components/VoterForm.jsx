@@ -1,7 +1,16 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+ feature/localization
 import { addVoter } from '../utils/db';
 import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+
+ feature/offline-voter-form
+import { addVoter } from '../utils/db'; // We'll make sure this path is correct
+
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+ dev
+dev
 
 const VoterForm = () => {
     const navigate = useNavigate();
@@ -12,6 +21,11 @@ const VoterForm = () => {
         ward: '',
         issue: '',
     });
+ feature/localization
+
+ feature/offline-voter-form
+
+ dev
     const [duplicateWarning, setDuplicateWarning] = useState(null);
 
     const checkPhone = async () => {
@@ -24,6 +38,10 @@ const VoterForm = () => {
             }
         }
     };
+feature/localization
+
+dev
+ dev
 
     const handleChange = (e) => {
         setFormData({
@@ -95,10 +113,21 @@ const VoterForm = () => {
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
+ feature/localization
+
+ feature/offline-voter-form
+                        required
+                    />
+
+ dev
                         onBlur={checkPhone}
                         required
                     />
                     {duplicateWarning && <p style={{ color: '#EF4444', fontSize: '0.8rem', marginTop: '0.25rem' }}>{duplicateWarning}</p>}
+ feature/localization
+
+ dev
+ dev
                 </div>
 
                 <div className="input-group">

@@ -1,20 +1,41 @@
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+ feature/localization
 import { useLanguage } from "../context/LanguageContext";
 import { countVoters } from "../utils/db";
 import { syncOfflineData } from "../utils/syncService";
 
+feature/offline-voter-form
+import { countVoters } from "../utils/db";
+
+import { useEffect, useState } from "react";
+import { countVoters } from "../utils/db";
+import { syncOfflineData } from "../utils/syncService";
+ dev
+ dev
+
 const Dashboard = () => {
     const { currentUser, logout } = useAuth();
     const navigate = useNavigate();
+ feature/localization
     const { t } = useLanguage(); // Using language context
+
+ dev
     const [stats, setStats] = useState({ local: 0, synced: 0 });
 
     useEffect(() => {
         const loadStats = async () => {
             const localCount = await countVoters();
             setStats(prev => ({ ...prev, local: localCount }));
+ feature/localization
+
+ feature/offline-voter-form
+        };
+        loadStats();
+    }, []);
+
+ dev
 
             // Auto-sync on load
             if (currentUser && navigator.onLine) {
@@ -33,6 +54,10 @@ const Dashboard = () => {
         };
         loadStats();
     }, [currentUser]);
+ feature/localization
+
+dev
+ dev
 
     const handleLogout = async () => {
         try {
@@ -63,11 +88,19 @@ const Dashboard = () => {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: '#EFF6FF', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
                     <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }}>{stats.local}</h3>
+ feature/localization
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>{t.votersAdded}</p>
                 </div>
                 <div style={{ background: '#FFF7ED', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
                     <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>{stats.synced}</h3>
                     <p style={{ fontSize: '0.8rem', margin: 0 }}>{t.pendingSync}</p>
+
+                    <p style={{ fontSize: '0.8rem', margin: 0 }}>Voters Added</p>
+                </div>
+                <div style={{ background: '#FFF7ED', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
+                    <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem' }}>{stats.synced}</h3>
+                    <p style={{ fontSize: '0.8rem', margin: 0 }}>Pending Sync</p>
+ dev
                 </div>
             </div>
 
@@ -76,11 +109,19 @@ const Dashboard = () => {
                 className="btn-primary"
                 style={{ marginBottom: '1rem' }}
             >
+ feature/localization
                 {t.addNewVoter}
             </button>
 
             <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
                 {t.logout}
+
+                + Add New Voter
+            </button>
+
+            <button onClick={handleLogout} className="btn-secondary" style={{ width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
+                Logout
+ dev
             </button>
         </div>
     );
