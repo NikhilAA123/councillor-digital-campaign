@@ -1,9 +1,23 @@
+ feature/voter-crm-update
+ feature/voter-crm-update
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
  dev
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 
  feature/volunteer-app-init
  main
+ main
+
+ dev
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+ feature/volunteer-app-init
+ main
+ dev
 :root {
   /* Brand Colors - Trustworthy Blue & Energetic Orange */
   --primary-color: #2563EB; /* Royal Blue */
@@ -22,6 +36,10 @@
   line-height: 1.5;
   font-weight: 400;
 
+feature/voter-crm-update
+ feature/voter-crm-update
+
+dev
  dev
 
   color-scheme: light dark;
@@ -51,12 +69,20 @@
 
  dev
  main
+ feature/voter-crm-update
+main
+
+ dev
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+feature/voter-crm-update
+ feature/voter-crm-update
+
+ dev
  dev
 
 feature/volunteer-app-init
@@ -72,15 +98,27 @@ a:hover {
 
  dev
  main
+ feature/voter-crm-update
+ main
+ dev
 body {
   margin: 0;
   display: flex;
   place-items: center;
+ feature/voter-crm-update
+ feature/voter-crm-update
+  justify-content: center;
+
+ dev
  dev
   justify-content: center;
 
  feature/volunteer-app-init
  main
+ feature/voter-crm-update
+ main
+
+dev
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--background-color);
@@ -159,6 +197,10 @@ input:focus {
   cursor: pointer;
   transition: background-color 0.2s;
   width: 100%;
+ feature/voter-crm-update
+ feature/voter-crm-update
+
+ dev
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -171,6 +213,22 @@ input:focus {
   opacity: 0.7;
 }
 
+ feature/voter-crm-update
+
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+ main
+ dev
 .btn-secondary {
   background-color: transparent;
   color: var(--text-secondary);
@@ -182,6 +240,14 @@ input:focus {
   transition: all 0.2s;
 }
 
+ feature/voter-crm-update
+ feature/voter-crm-update
+.btn-secondary:hover {
+  border-color: var(--text-main);
+  color: var(--text-main);
+
+
+ dev
  dev
 .btn-secondary:hover {
   border-color: var(--text-main);
@@ -306,4 +372,8 @@ input:focus {
   color: var(--text-main);
  dev
  main
+ feature/voter-crm-update
+ main
+
+ dev
 }
