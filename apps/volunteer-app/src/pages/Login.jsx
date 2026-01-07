@@ -5,6 +5,8 @@ import {
 } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
+ feature/admin-dashboard
+
  feature/voter-crm-update
 
  dev
@@ -25,13 +27,17 @@ function Login() {
   const navigate = useNavigate();
 
  main
+ main
 import { useLanguage } from "../context/LanguageContext";
 
 function Login() {
   const navigate = useNavigate();
   const { t, language, setLanguage } = useLanguage();
+ feature/admin-dashboard
+
  feature/voter-crm-update
 
+ main
  main
  main
  main
@@ -86,6 +92,8 @@ function Login() {
     try {
       setLoading(true);
       await confirmation.confirm(otp);
+ feature/admin-dashboard
+
  feature/voter-crm-update
 
  dev
@@ -99,6 +107,7 @@ function Login() {
  main
  main
  main
+ main
       navigate("/dashboard");
     } catch (error) {
       console.error("OTP Verify Error:", error);
@@ -107,6 +116,8 @@ function Login() {
       setLoading(false);
     }
   };
+
+ feature/admin-dashboard
 
  feature/voter-crm-update
 
@@ -156,6 +167,7 @@ feature/voter-crm-update
         <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Enter your mobile number to access the volunteer dashboard.</p>
 
  main
+ main
   const langBtnStyle = (lang) => ({
     flex: 1,
     padding: '0.5rem',
@@ -180,8 +192,11 @@ feature/voter-crm-update
         <h1 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>{t.appTitle}</h1>
         <h3>{t.loginSubtitle}</h3>
         <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>{t.enterMobile}</p>
+ feature/admin-dashboard
+
  dev
 
+ main
  main
  main
  main
@@ -190,9 +205,12 @@ feature/voter-crm-update
 
       {!confirmation ? (
         <div className="input-group">
+ feature/admin-dashboard
+
  feature/voter-crm-update
 
  dev
+ main
  main
           <label className="input-label" htmlFor="phone">{t.phoneLabel}</label>
           <input
@@ -214,6 +232,8 @@ feature/voter-crm-update
         <div className="input-group">
           <label className="input-label" htmlFor="otp">{t.enterOtp}</label>
           <input
+feature/admin-dashboard
+
  feature/voter-crm-update
 
 
@@ -266,6 +286,7 @@ feature/voter-crm-update
  main
  main
  main
+ main
             id="otp"
             type="number"
             placeholder="123456"
@@ -278,6 +299,8 @@ feature/voter-crm-update
             onClick={verifyOtp}
             disabled={loading}
           >
+ feature/admin-dashboard
+
  feature/voter-crm-update
             {loading ? t.verifying : t.verify}
 
@@ -301,11 +324,15 @@ feature/voter-crm-update
  dev
 
 
+ main
             {loading ? t.verifying : t.verify}
           </button>
           <button type="button" className="btn-secondary" onClick={() => setConfirmation(null)} style={{ marginTop: '0.5rem', width: '100%' }}>
             {t.changeNumber}
           </button>
+ feature/admin-dashboard
+
+ main
  main
  main
  main

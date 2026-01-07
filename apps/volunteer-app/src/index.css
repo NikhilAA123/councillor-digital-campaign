@@ -1,3 +1,7 @@
+ feature/admin-dashboard
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
  feature/voter-crm-update
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -7,6 +11,7 @@
 
 
  feature/volunteer-app-init
+ main
  main
  main
 :root {
@@ -26,6 +31,8 @@
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+ feature/admin-dashboard
 
  feature/voter-crm-update
 
@@ -59,11 +66,14 @@
  dev
  main
 main
+ main
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+ feature/admin-dashboard
 
  feature/voter-crm-update
 
@@ -83,10 +93,14 @@ a:hover {
  dev
  main
  main
+ main
 body {
   margin: 0;
   display: flex;
   place-items: center;
+ feature/admin-dashboard
+  justify-content: center;
+
  feature/voter-crm-update
   justify-content: center;
 
@@ -94,6 +108,7 @@ body {
   justify-content: center;
 
  feature/volunteer-app-init
+ main
  main
  main
   min-width: 320px;
@@ -174,6 +189,8 @@ input:focus {
   cursor: pointer;
   transition: background-color 0.2s;
   width: 100%;
+ feature/admin-dashboard
+
  feature/voter-crm-update
 }
 
@@ -188,6 +205,7 @@ input:focus {
 }
 
 
+ main
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -200,6 +218,9 @@ input:focus {
   opacity: 0.7;
 }
 
+ feature/admin-dashboard
+
+ main
  main
 .btn-secondary {
   background-color: transparent;
@@ -211,6 +232,11 @@ input:focus {
   cursor: pointer;
   transition: all 0.2s;
 }
+
+feature/admin-dashboard
+.btn-secondary:hover {
+  border-color: var(--text-main);
+  color: var(--text-main);
 
  feature/voter-crm-update
 .btn-secondary:hover {
@@ -340,6 +366,7 @@ input:focus {
   border-color: var(--text-main);
   color: var(--text-main);
  dev
+ main
  main
  main
 }

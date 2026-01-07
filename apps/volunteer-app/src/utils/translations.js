@@ -22,6 +22,10 @@ export const translations = {
         addVoterTitle: "Add Voter",
         voterName: "Voter Name",
         ward: "Ward / Area",
+ feature/admin-dashboard
+        mainIssue: "Main Issue (Optional)",
+        selectIssue: "Select an issue...",
+
  feature/voter-crm-update
 
  dev
@@ -43,6 +47,7 @@ export const translations = {
 
         mainIssue: "Main Issue (Optional)",
         selectIssue: "Select an issue...",
+ main
  main
  main
         saveVoter: "Save Voter",
@@ -86,6 +91,10 @@ export const translations = {
         addVoterTitle: "ఓటరును జోడించండి",
         voterName: "ఓటరు పేరు",
         ward: "వార్డు / ప్రాంతం",
+ feature/admin-dashboard
+        mainIssue: "ప్రధాన సమస్య (ఐచ్ఛికం)",
+        selectIssue: "సమస్యను ఎంచుకోండి...",
+
  feature/voter-crm-update
 
  dev
@@ -107,6 +116,7 @@ export const translations = {
         mainIssue: "ప్రధాన సమస్య (ఐచ్ఛికం)",
         selectIssue: "సమస్యను ఎంచుకోండి...",
 main
+ main
  main
         saveVoter: "ఓటరును సేవ్ చేయండి",
         saving: "సేవ్ చేస్తోంది...",
@@ -149,6 +159,10 @@ main
         addVoterTitle: "मतदाता जोड़ें",
         voterName: "मतदाता का नाम",
         ward: "वार्ड / क्षेत्र",
+ feature/admin-dashboard
+        mainIssue: "मुख्य मुद्दा (वैकल्पिक)",
+        selectIssue: "एक मुद्दा चुनें...",
+
  feature/voter-crm-update
 
  dev
@@ -169,6 +183,7 @@ main
 
         mainIssue: "मुख्य मुद्दा (वैकल्पिक)",
         selectIssue: "एक मुद्दा चुनें...",
+ main
  main
  main
         saveVoter: "मतदाता सहेजें",

@@ -1,5 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+ feature/admin-dashboard
+import { addVoter } from '../utils/db';
+import { checkDuplicateVoter } from '../utils/syncService'; // We'll make sure this path is correct
+
+const VoterForm = () => {
+
  feature/voter-crm-update
 
  dev
@@ -39,12 +45,17 @@ dev
 const VoterForm = () => {
 main
  main
+ main
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         ward: '',
+ feature/admin-dashboard
+        issue: '',
+    });
+
  feature/voter-crm-update
 
 dev
@@ -74,6 +85,7 @@ main
  main
  main
  main
+ main
     const [duplicateWarning, setDuplicateWarning] = useState(null);
 
     const checkPhone = async () => {
@@ -86,6 +98,8 @@ main
             }
         }
     };
+ feature/admin-dashboard
+
  feature/voter-crm-update
 
  dev
@@ -101,6 +115,7 @@ dev
  dev
  dev
 
+ main
  main
  main
  main
@@ -150,6 +165,9 @@ dev
                 >
                     ←
                 </button>
+ feature/admin-dashboard
+                <h2 style={{ fontSize: '1.5rem' }}>Add Voter</h2>
+
 feature/voter-crm-update
                 <h2 style={{ fontSize: '1.5rem' }}>{t.addVoterTitle}</h2>
 
@@ -159,10 +177,14 @@ feature/voter-crm-update
                 <h2 style={{ fontSize: '1.5rem' }}>Add Voter</h2>
  main
  main
+ main
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div className="input-group">
+ feature/admin-dashboard
+                    <label className="input-label" htmlFor="name">Voter Name *</label>
+
  feature/voter-crm-update
                     <label className="input-label" htmlFor="name">{t.voterName} *</label>
 
@@ -170,6 +192,7 @@ feature/voter-crm-update
                     <label className="input-label" htmlFor="name">{t.voterName} *</label>
 
                     <label className="input-label" htmlFor="name">Voter Name *</label>
+ main
  main
  main
                     <input
@@ -192,6 +215,8 @@ feature/voter-crm-update
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
+ feature/admin-dashboard
+
  feature/voter-crm-update
 
 dev
@@ -214,10 +239,13 @@ dev
  main
  main
  main
+ main
                         onBlur={checkPhone}
                         required
                     />
                     {duplicateWarning && <p style={{ color: '#EF4444', fontSize: '0.8rem', marginTop: '0.25rem' }}>{duplicateWarning}</p>}
+ feature/admin-dashboard
+
  feature/voter-crm-update
 
  dev
@@ -239,11 +267,15 @@ dev
  dev
  dev
  main
+ main
                 </div>
 
                 <div className="input-group">
                     <label className="input-label" htmlFor="ward">Ward / Area *</label>
+ feature/admin-dashboard
+
 main
+ main
  main
                     <input
                         id="ward"
@@ -257,6 +289,9 @@ main
                 </div>
 
                 <div className="input-group">
+ feature/admin-dashboard
+                    <label className="input-label" htmlFor="issue">Main Issue (Optional)</label>
+
  feature/voter-crm-update
 
  dev
@@ -305,6 +340,7 @@ main
                     <label className="input-label" htmlFor="issue">Main Issue (Optional)</label>
 main
  main
+ main
                     <select
                         id="issue"
                         name="issue"
@@ -335,12 +371,16 @@ main
                     disabled={loading}
                     style={{ marginTop: '1rem' }}
                 >
+ feature/admin-dashboard
+                    {loading ? "Saving..." : "Save Voter Offline"}
+
  feature/voter-crm-update
 
  dev
                     {loading ? t.saving : t.saveVoter}
 
                     {loading ? "Saving..." : "Save Voter Offline"}
+ main
  main
  main
                 </button>

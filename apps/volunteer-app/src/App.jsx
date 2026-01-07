@@ -1,6 +1,9 @@
+ feature/admin-dashboard
+
  feature/voter-crm-update
 
  dev
+ main
  main
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
@@ -12,6 +15,9 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import InstallPrompt from "./components/InstallPrompt";
 
 function App() {
+feature/admin-dashboard
+  return (
+
  feature/voter-crm-update
 
   return (
@@ -111,6 +117,7 @@ function App() {
   return (
  feature/localization
  main
+ main
     <LanguageProvider>
       <AuthProvider>
         <Router>
@@ -138,12 +145,17 @@ function App() {
         </Router>
       </AuthProvider>
     </LanguageProvider>
+feature/admin-dashboard
+
  dev
 
+ main
   );
 }
 
 export default App;
+ feature/admin-dashboard
+
 
  dev
  hotfix/firebase-config-cleanup
@@ -208,5 +220,6 @@ export default App;
  main
  dev
  dev
+ main
  main
  main
