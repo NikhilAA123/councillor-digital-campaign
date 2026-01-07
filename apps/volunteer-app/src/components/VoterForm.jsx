@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
  feature/voter-crm-update
+ feature/voter-crm-update
 
  dev
  main
+
+ dev
+ dev
 import { addVoter } from '../utils/db';
 import { checkDuplicateVoter } from '../utils/syncService';
 import { useLanguage } from '../context/LanguageContext';
@@ -13,7 +17,10 @@ const VoterForm = () => {
     const { language } = useLanguage();
     const t = translations[language];
  feature/voter-crm-update
+ feature/voter-crm-update
 
+
+ dev
 
  dev
 
@@ -38,7 +45,10 @@ dev
  main
 const VoterForm = () => {
 main
+ feature/voter-crm-update
  main
+
+ dev
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
@@ -46,15 +56,21 @@ main
         phone: '',
         ward: '',
  feature/voter-crm-update
+ feature/voter-crm-update
 
 dev
  main
+
+dev
+ dev
         booth: '',
         supportStatus: '',
         issue: '',
     });
  feature/voter-crm-update
+ feature/voter-crm-update
 
+ dev
 
         issue: '',
     });
@@ -73,7 +89,10 @@ main
  main
  main
  main
+ feature/voter-crm-update
  main
+
+ dev
     const [duplicateWarning, setDuplicateWarning] = useState(null);
 
     const checkPhone = async () => {
@@ -87,7 +106,10 @@ main
         }
     };
  feature/voter-crm-update
+ feature/voter-crm-update
 
+
+ dev
  dev
 
  dev
@@ -104,7 +126,9 @@ dev
  main
  main
  main
+feature/voter-crm-update
  main
+dev
 
     const handleChange = (e) => {
         setFormData({
@@ -150,6 +174,7 @@ dev
                 >
                     ←
                 </button>
+ feature/voter-crm-update
 feature/voter-crm-update
                 <h2 style={{ fontSize: '1.5rem' }}>{t.addVoterTitle}</h2>
 
@@ -159,19 +184,32 @@ feature/voter-crm-update
                 <h2 style={{ fontSize: '1.5rem' }}>Add Voter</h2>
  main
  main
+
+ dev
+                <h2 style={{ fontSize: '1.5rem' }}>{t.addVoterTitle}</h2>
+
+                <h2 style={{ fontSize: '1.5rem' }}>Add Voter</h2>
+ main
+ dev
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div className="input-group">
  feature/voter-crm-update
+ feature/voter-crm-update
                     <label className="input-label" htmlFor="name">{t.voterName} *</label>
 
+
+ dev
  dev
                     <label className="input-label" htmlFor="name">{t.voterName} *</label>
 
                     <label className="input-label" htmlFor="name">Voter Name *</label>
  main
+feature/voter-crm-update
  main
+
+ dev
                     <input
                         id="name"
                         name="name"
@@ -193,7 +231,10 @@ feature/voter-crm-update
                         value={formData.phone}
                         onChange={handleChange}
  feature/voter-crm-update
+ feature/voter-crm-update
 
+
+ dev
 dev
 
  dev
@@ -213,21 +254,31 @@ dev
  main
  main
  main
+ feature/voter-crm-update
  main
+
+ dev
                         onBlur={checkPhone}
                         required
                     />
                     {duplicateWarning && <p style={{ color: '#EF4444', fontSize: '0.8rem', marginTop: '0.25rem' }}>{duplicateWarning}</p>}
  feature/voter-crm-update
+ feature/voter-crm-update
 
  dev
  main
+
+ dev
+ dev
                 </div>
 
                 <div className="input-group">
                     <label className="input-label" htmlFor="ward">{t.ward} *</label>
  feature/voter-crm-update
+ feature/voter-crm-update
 
+
+ dev
 
  dev
 
@@ -244,7 +295,10 @@ dev
                 <div className="input-group">
                     <label className="input-label" htmlFor="ward">Ward / Area *</label>
 main
+ feature/voter-crm-update
  main
+
+dev
                     <input
                         id="ward"
                         name="ward"
@@ -258,9 +312,13 @@ main
 
                 <div className="input-group">
  feature/voter-crm-update
+ feature/voter-crm-update
 
  dev
  main
+
+ dev
+ dev
                     <label className="input-label" htmlFor="booth">{t.booth}</label>
                     <input
                         id="booth"
@@ -300,11 +358,17 @@ main
                 <div className="input-group">
                     <label className="input-label" htmlFor="issue">{t.mainIssue}</label>
  feature/voter-crm-update
+ feature/voter-crm-update
 
 
                     <label className="input-label" htmlFor="issue">Main Issue (Optional)</label>
 main
  main
+
+
+                    <label className="input-label" htmlFor="issue">Main Issue (Optional)</label>
+main
+ dev
                     <select
                         id="issue"
                         name="issue"
@@ -336,13 +400,18 @@ main
                     style={{ marginTop: '1rem' }}
                 >
  feature/voter-crm-update
+ feature/voter-crm-update
 
+ dev
  dev
                     {loading ? t.saving : t.saveVoter}
 
                     {loading ? "Saving..." : "Save Voter Offline"}
  main
+ feature/voter-crm-update
  main
+
+ dev
                 </button>
             </form>
         </div>

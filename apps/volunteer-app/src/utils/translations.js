@@ -23,9 +23,13 @@ export const translations = {
         voterName: "Voter Name",
         ward: "Ward / Area",
  feature/voter-crm-update
+ feature/voter-crm-update
 
  dev
  main
+
+ dev
+ dev
         booth: "Booth Number (Optional)",
         supportStatus: "Support Status",
         mainIssue: "Main Issue (Optional)",
@@ -39,12 +43,18 @@ export const translations = {
         },
 
  feature/voter-crm-update
+ feature/voter-crm-update
 
+
+ dev
 
         mainIssue: "Main Issue (Optional)",
         selectIssue: "Select an issue...",
  main
+ feature/voter-crm-update
  main
+
+ dev
         saveVoter: "Save Voter",
         saving: "Saving...",
 
@@ -87,9 +97,13 @@ export const translations = {
         voterName: "ఓటరు పేరు",
         ward: "వార్డు / ప్రాంతం",
  feature/voter-crm-update
+ feature/voter-crm-update
 
  dev
  main
+
+ dev
+ dev
         booth: "బూత్ సంఖ్య (ఐచ్ఛికం)",
         supportStatus: "మద్దతు స్థితి",
         mainIssue: "ప్రధాన సమస్య (ఐచ్ఛికం)",
@@ -102,12 +116,16 @@ export const translations = {
         },
 
  feature/voter-crm-update
+ feature/voter-crm-update
 
+ dev
 
         mainIssue: "ప్రధాన సమస్య (ఐచ్ఛికం)",
         selectIssue: "సమస్యను ఎంచుకోండి...",
 main
+feature/voter-crm-update
  main
+ dev
         saveVoter: "ఓటరును సేవ్ చేయండి",
         saving: "సేవ్ చేస్తోంది...",
 
@@ -150,9 +168,13 @@ main
         voterName: "मतदाता का नाम",
         ward: "वार्ड / क्षेत्र",
  feature/voter-crm-update
+ feature/voter-crm-update
 
  dev
  main
+
+ dev
+ dev
         booth: "बूथ संख्या (वैकल्पिक)",
         supportStatus: "समर्थन स्थिति",
         mainIssue: "मुख्य मुद्दा (वैकल्पिक)",
@@ -165,12 +187,16 @@ main
         },
 
  feature/voter-crm-update
+ feature/voter-crm-update
 
+ dev
 
         mainIssue: "मुख्य मुद्दा (वैकल्पिक)",
         selectIssue: "एक मुद्दा चुनें...",
  main
+ feature/voter-crm-update
  main
+ dev
         saveVoter: "मतदाता सहेजें",
         saving: "सहेज रहा है...",
 
