@@ -22,6 +22,20 @@ export const translations = {
         addVoterTitle: "Add Voter",
         voterName: "Voter Name",
         ward: "Ward / Area",
+ dev
+ feature/voter-crm-update
+ feature/voter-crm-update
+
+ dev
+ main
+
+ dev
+ dev
+        booth: "Booth Number (Optional)",
+        supportStatus: "Support Status",
+        mainIssue: "Main Issue (Optional)",
+        selectIssue: "Select an issue...",
+
  feature/admin-dashboard
         mainIssue: "Main Issue (Optional)",
         selectIssue: "Select an issue...",
@@ -34,6 +48,7 @@ export const translations = {
         supportStatus: "Support Status",
         mainIssue: "Main Issue (Optional)",
         selectIssue: "Select an issue...",
+ main
         admin_login_title: "Admin Portal",
 
         statusOptions: {
@@ -43,10 +58,24 @@ export const translations = {
         },
 
  feature/voter-crm-update
+ dev
+ feature/voter-crm-update
 
+
+ dev
+
+
+ main
 
         mainIssue: "Main Issue (Optional)",
         selectIssue: "Select an issue...",
+ main
+ dev
+ feature/voter-crm-update
+ main
+
+ dev
+
  main
  main
  main
@@ -91,13 +120,23 @@ export const translations = {
         addVoterTitle: "ఓటరును జోడించండి",
         voterName: "ఓటరు పేరు",
         ward: "వార్డు / ప్రాంతం",
+ dev
+ feature/voter-crm-update
+
  feature/admin-dashboard
         mainIssue: "ప్రధాన సమస్య (ఐచ్ఛికం)",
         selectIssue: "సమస్యను ఎంచుకోండి...",
 
+ main
  feature/voter-crm-update
 
  dev
+ main
+ dev
+
+ dev
+ dev
+
  main
         booth: "బూత్ సంఖ్య (ఐచ్ఛికం)",
         supportStatus: "మద్దతు స్థితి",
@@ -111,11 +150,23 @@ export const translations = {
         },
 
  feature/voter-crm-update
+ dev
+ feature/voter-crm-update
 
+ dev
+
+
+ main
 
         mainIssue: "ప్రధాన సమస్య (ఐచ్ఛికం)",
         selectIssue: "సమస్యను ఎంచుకోండి...",
 main
+ dev
+feature/voter-crm-update
+ main
+ dev
+
+ main
  main
  main
         saveVoter: "ఓటరును సేవ్ చేయండి",
@@ -159,13 +210,22 @@ main
         addVoterTitle: "मतदाता जोड़ें",
         voterName: "मतदाता का नाम",
         ward: "वार्ड / क्षेत्र",
+dev
+ feature/voter-crm-update
+
  feature/admin-dashboard
         mainIssue: "मुख्य मुद्दा (वैकल्पिक)",
         selectIssue: "एक मुद्दा चुनें...",
-
+ main
  feature/voter-crm-update
 
  dev
+ main
+ dev
+
+ dev
+ dev
+
  main
         booth: "बूथ संख्या (वैकल्पिक)",
         supportStatus: "समर्थन स्थिति",
@@ -179,10 +239,22 @@ main
         },
 
  feature/voter-crm-update
+ dev
+ feature/voter-crm-update
 
+ dev
+
+
+ main
 
         mainIssue: "मुख्य मुद्दा (वैकल्पिक)",
         selectIssue: "एक मुद्दा चुनें...",
+ main
+ dev
+ feature/voter-crm-update
+ main
+ dev
+
  main
  main
  main

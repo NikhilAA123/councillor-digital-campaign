@@ -1,7 +1,11 @@
+ dev
+ feature/voter-crm-update
+
  feature/admin-dashboard
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 
+ main
  feature/voter-crm-update
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -12,6 +16,17 @@
 
  feature/volunteer-app-init
  main
+ main
+ dev
+
+ dev
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+ feature/volunteer-app-init
+ main
+ dev
+
  main
  main
 :root {
@@ -32,10 +47,17 @@
   line-height: 1.5;
   font-weight: 400;
 
+ dev
+feature/voter-crm-update
+ feature/voter-crm-update
+
+dev
+
  feature/admin-dashboard
 
  feature/voter-crm-update
 
+ main
  dev
 
   color-scheme: light dark;
@@ -65,7 +87,14 @@
 
  dev
  main
+ dev
+ feature/voter-crm-update
 main
+
+ dev
+
+main
+ main
  main
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -73,11 +102,19 @@ main
   -moz-osx-font-smoothing: grayscale;
 }
 
+ dev
+feature/voter-crm-update
+ feature/voter-crm-update
+
+ dev
+ dev
+
  feature/admin-dashboard
 
  feature/voter-crm-update
 
  dev
+ main
 
 feature/volunteer-app-init
 a {
@@ -92,22 +129,42 @@ a:hover {
 
  dev
  main
+ dev
+ feature/voter-crm-update
+ main
+ dev
+
+ main
  main
  main
 body {
   margin: 0;
   display: flex;
   place-items: center;
+ dev
+ feature/voter-crm-update
+
  feature/admin-dashboard
   justify-content: center;
 
+ main
  feature/voter-crm-update
   justify-content: center;
 
  dev
+ dev
+ dev
+ main
   justify-content: center;
 
  feature/volunteer-app-init
+ main
+ dev
+ feature/voter-crm-update
+ main
+
+dev
+
  main
  main
  main
@@ -189,9 +246,16 @@ input:focus {
   cursor: pointer;
   transition: background-color 0.2s;
   width: 100%;
+dev
+ feature/voter-crm-update
+ feature/voter-crm-update
+
+ dev
+
  feature/admin-dashboard
 
  feature/voter-crm-update
+ main
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -202,6 +266,26 @@ input:focus {
   background-color: #9CA3AF;
   cursor: not-allowed;
   opacity: 0.7;
+ dev
+}
+
+ feature/voter-crm-update
+
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+ main
+ dev
+
 }
 
 
@@ -220,6 +304,7 @@ input:focus {
 
  feature/admin-dashboard
 
+ main
  main
  main
 .btn-secondary {
@@ -233,10 +318,20 @@ input:focus {
   transition: all 0.2s;
 }
 
+ dev
+ feature/voter-crm-update
+ feature/voter-crm-update
+
 feature/admin-dashboard
+ main
 .btn-secondary:hover {
   border-color: var(--text-main);
   color: var(--text-main);
+
+dev
+
+ dev
+ dev
 
  feature/voter-crm-update
 .btn-secondary:hover {
@@ -244,6 +339,7 @@ feature/admin-dashboard
   color: var(--text-main);
 
  dev
+ main
 .btn-secondary:hover {
   border-color: var(--text-main);
   color: var(--text-main);
@@ -366,6 +462,13 @@ input:focus {
   border-color: var(--text-main);
   color: var(--text-main);
  dev
+ main
+dev
+ feature/voter-crm-update
+ main
+
+ dev
+
  main
  main
  main

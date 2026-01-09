@@ -5,6 +5,34 @@ import {
 } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
+ dev
+ feature/voter-crm-update
+ feature/voter-crm-update
+
+
+ dev
+ dev
+
+dev
+ main
+ feature/voter-crm-update
+import { useLanguage } from "../context/LanguageContext";
+
+function Login() {
+  const navigate = useNavigate();
+  const { t, language, setLanguage } = useLanguage();
+ dev
+
+
+ feature/data-sync
+
+function Login() {
+  const navigate = useNavigate();
+
+ main
+
+ dev
+
  feature/admin-dashboard
 
  feature/voter-crm-update
@@ -13,11 +41,20 @@ import { useNavigate } from "react-router-dom";
 
 dev
  main
+ main
 import { useLanguage } from "../context/LanguageContext";
 
 function Login() {
   const navigate = useNavigate();
   const { t, language, setLanguage } = useLanguage();
+ dev
+ feature/voter-crm-update
+ feature/voter-crm-update
+
+ main
+
+
+ main
  dev
 
 
@@ -33,10 +70,14 @@ import { useLanguage } from "../context/LanguageContext";
 function Login() {
   const navigate = useNavigate();
   const { t, language, setLanguage } = useLanguage();
+ dev
+ dev
+
  feature/admin-dashboard
 
  feature/voter-crm-update
 
+ main
  main
  main
  main
@@ -92,11 +133,21 @@ function Login() {
     try {
       setLoading(true);
       await confirmation.confirm(otp);
+
+      dev
+feature/voter-crm-update
+ feature/voter-crm-update
+
+
+ dev
+ dev
+
  feature/admin-dashboard
 
  feature/voter-crm-update
 
  dev
+ main
 
  dev
 
@@ -105,6 +156,12 @@ function Login() {
 
  main
  main
+ main
+ dev
+ feature/voter-crm-update
+ main
+
+ dev
  main
  main
  main
@@ -117,8 +174,8 @@ function Login() {
     }
   };
 
- feature/admin-dashboard
-
+ dev
+ feature/voter-crm-update
  feature/voter-crm-update
 
  dev
@@ -167,6 +224,70 @@ feature/voter-crm-update
         <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Enter your mobile number to access the volunteer dashboard.</p>
 
  main
+
+ dev
+
+ dev
+
+ feature/admin-dashboard
+
+ feature/voter-crm-update
+
+ dev
+
+main
+ dev
+main
+  const langBtnStyle = (lang) => ({
+    flex: 1,
+    padding: '0.5rem',
+    border: '1px solid var(--border-color)',
+    background: language === lang ? 'var(--primary-color)' : 'white',
+    color: language === lang ? 'white' : 'var(--text-main)',
+    cursor: 'pointer',
+    fontSize: '0.9rem',
+    fontWeight: '600'
+  });
+
+ feature/voter-crm-update
+
+
+ feature/data-sync
+ main
+ main
+  return (
+    <div className="auth-card">
+      {/* Language Toggle */}
+      <div style={{ display: 'flex', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem', border: '1px solid var(--border-color)' }}>
+        <button onClick={() => setLanguage('en')} style={langBtnStyle('en')}>English</button>
+        <button onClick={() => setLanguage('te')} style={langBtnStyle('te')}>తెలుగు</button>
+        <button onClick={() => setLanguage('hi')} style={langBtnStyle('hi')}>हिंदी</button>
+      </div>
+
+      <div>
+feature/voter-crm-update
+        <h1 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>{t.appTitle}</h1>
+        <h3>{t.loginSubtitle}</h3>
+        <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>{t.enterMobile}</p>
+
+ dev
+        <h1 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>{t.appTitle}</h1>
+        <h3>{t.loginSubtitle}</h3>
+        <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>{t.enterMobile}</p>
+ feature/voter-crm-update
+ dev
+
+ main
+
+
+        <h1 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>Councillor Campaign</h1>
+        <h3>Volunteer Login</h3>
+        <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Enter your mobile number to access the volunteer dashboard.</p>
+
+ main
+ dev
+
+ main
  main
   const langBtnStyle = (lang) => ({
     flex: 1,
@@ -192,10 +313,16 @@ feature/voter-crm-update
         <h1 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>{t.appTitle}</h1>
         <h3>{t.loginSubtitle}</h3>
         <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>{t.enterMobile}</p>
+dev
+ dev
+
+ dev
+
  feature/admin-dashboard
 
  dev
 
+ main
  main
  main
  main
@@ -205,13 +332,15 @@ feature/voter-crm-update
 
       {!confirmation ? (
         <div className="input-group">
- feature/admin-dashboard
-
+ dev
+ feature/voter-crm-update
  feature/voter-crm-update
 
  dev
  main
- main
+
+ dev
+ dev
           <label className="input-label" htmlFor="phone">{t.phoneLabel}</label>
           <input
             id="phone"
@@ -232,12 +361,56 @@ feature/voter-crm-update
         <div className="input-group">
           <label className="input-label" htmlFor="otp">{t.enterOtp}</label>
           <input
-feature/admin-dashboard
-
+ feature/voter-crm-update
  feature/voter-crm-update
 
 
  dev
+          <label className="input-label" htmlFor="phone">{t.phoneLabel}</label>
+
+ feature/data-sync
+          <label className="input-label" htmlFor="phone">Mobile Number</label>
+ main
+
+ feature/admin-dashboard
+
+ feature/voter-crm-update
+
+ dev
+ main
+ main
+          <label className="input-label" htmlFor="phone">{t.phoneLabel}</label>
+ main
+          <input
+            id="phone"
+            type="tel"
+            placeholder="+91 98765 43210"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+          <button
+            className="btn-primary"
+            onClick={sendOtp}
+            disabled={loading}
+          >
+            {loading ? t.sending : t.sendCode}
+          </button>
+        </div>
+      ) : (
+        <div className="input-group">
+          <label className="input-label" htmlFor="otp">{t.enterOtp}</label>
+          <input
+ dev
+
+
+feature/admin-dashboard
+
+ feature/voter-crm-update
+ main
+
+
+ dev
+dev
           <label className="input-label" htmlFor="phone">{t.phoneLabel}</label>
 
  feature/data-sync
@@ -262,6 +435,9 @@ feature/admin-dashboard
         <div className="input-group">
           <label className="input-label" htmlFor="otp">{t.enterOtp}</label>
           <input
+ feature/voter-crm-update
+ main
+
 
           <label className="input-label" htmlFor="phone">{t.phoneLabel}</label>
           <input
@@ -283,6 +459,8 @@ feature/admin-dashboard
         <div className="input-group">
           <label className="input-label" htmlFor="otp">{t.enterOtp}</label>
           <input
+ dev
+ main
  main
  main
  main
@@ -299,11 +477,20 @@ feature/admin-dashboard
             onClick={verifyOtp}
             disabled={loading}
           >
+ dev
+feature/voter-crm-update
+ feature/voter-crm-update
+            {loading ? t.verifying : t.verify}
+
+
+ dev
+
  feature/admin-dashboard
 
  feature/voter-crm-update
             {loading ? t.verifying : t.verify}
 
+ main
  dev
             {loading ? t.verifying : t.verify}
 
@@ -314,14 +501,29 @@ feature/admin-dashboard
             {loading ? "Verifying..." : "Verify & Login"}
  main
  main
+ dev
+ feature/voter-crm-update
  main
+
+ dev
+
+ main
+main
           </button>
           <button type="button" className="btn-secondary" onClick={() => setConfirmation(null)} style={{ marginTop: '0.5rem', width: '100%' }}>
             {t.changeNumber}
           </button>
  feature/voter-crm-update
+ dev
+ feature/voter-crm-update
+
 
  dev
+ dev
+
+
+ dev
+ main
 
 
  main
@@ -336,6 +538,11 @@ feature/admin-dashboard
  main
  main
  main
+ main
+ feature/voter-crm-update
+ main
+
+ dev
         </div>
       )}
 

@@ -10,11 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+ dev
+ feature/voter-crm-update
+
 feature/admin-dashboard
 
+ main
  feature/voter-crm-update
 
  dev
+ main
+ dev
+
+ dev
+
  main
  main
     "firebase": "^11.1.0",
@@ -23,7 +32,11 @@ feature/admin-dashboard
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.1.1",
     "vite-plugin-pwa": "^0.21.1"
+ dev
+ feature/voter-crm-update
+
  feature/admin-dashboard
+ main
   },
   "devDependencies": {
 
@@ -31,9 +44,14 @@ feature/admin-dashboard
   },
   "devDependencies": {
 
+ dev
+
+ dev
+
   },
   "devDependencies": {
 
+ main
  dev
  feature/volunteer-app-init
     "react": "^19.2.0",
@@ -114,8 +132,15 @@ main
   },
   "devDependencies": {
  main
+ dev
+ feature/voter-crm-update
+ main
+
+ dev
+
  main
 main
+ main
     "@eslint/js": "^9.17.0",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
@@ -125,11 +150,25 @@ main
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
     "vite": "^6.0.5"
+ dev
+ feature/voter-crm-update
+ feature/voter-crm-update
+
+
+ dev
+ dev
+
+ dev
+ main
+ feature/voter-crm-update
+ main
+
  feature/admin-dashboard
 
  feature/voter-crm-update
 
  dev
+ main
 
  dev
  main
